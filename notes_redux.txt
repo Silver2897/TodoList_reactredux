@@ -1,0 +1,53 @@
+---------------------Create Store---------------------------
+const reducer = (state = 5) => {
+  return state;
+}
+
+// Redux methods are available from a Redux object
+// For example: Redux.createStore()
+// Define the store here:
+
+const store = Redux.createStore(reducer);
+
+Creates a store with state in it.
+
+--------------------------------------------------------------
+---------------------Get state from Redux Store-----------------
+'variable'.getState()
+--------------------------------------------------------------
+---------------------create action-----------------
+const action ={
+    type = '_action_name_'
+}
+--------------------------------------------------------------
+---------------------create actionCreator-----------------
+actionCreator()
+--------------------------------------------------------------
+---------------------dispatch a action-----------------
+store.dispatch(actionCreator());
+store.dispatch({ type: 'LOGIN' });
+--------------------------------------------------------------
+---------------------Handle an Action-----------------
+ A reducer takes state and action as arguments, and it always returns a new state
+const reducer = (state = defaultState, action) => {
+  // Change code below this line
+
+  // Change code above this line
+};
+--------------------------------------------------------------
+
+---------------------Subscribe store-----------------
+use to allow function to listen to a action in store
+store.subscribe(_function_name_);
+--------------------------------------------------------------
+
+---------------------Subscribe store-----------------
+For example, in a note-taking app with user authentication, one reducer could handle authentication while another handles the text and notes that the user is submitting. For such an application, we might write the combineReducers() method like this:
+
+const rootReducer = Redux.combineReducers({
+  _reducerObj1Key_: _reducer_1_,
+  _reducerObj2Key_: _reducer_2_
+});
+--------------------------------------------------------------
+
+

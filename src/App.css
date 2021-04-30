@@ -1,0 +1,121 @@
+@import '~antd/dist/antd.css';
+
+  .thumbnail-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align:center;
+    vertical-align: middle;
+    width:auto;
+    /* background-color: red; /* For browsers that do not support gradients */
+  /* background-image: linear-gradient(to bottom, blue , white); */ 
+  }
+  .site-card-border-less-wrapper {
+    padding: 30px;
+    background-color: red; /* For browsers that do not support gradients */
+  background-image: linear-gradient(to bottom right, blue, white);
+  }
+
+  .delete-tag{
+    color:green;
+    font-size: 30px;
+   text-align:center;
+    cursor: pointer;
+  }
+
+  .image-item{
+    display: block;
+    height: auto;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+    margin: 10px;
+    background:cornsilk;
+    box-shadow: 10px 10px 10px -10px #999, 10px 10px 10px -10px #999, -10px 10px 10px -10px #999;
+    animation: 
+        /* openspace .3s ease forwards,  */
+        restored-item-animation .5s .5s cubic-bezier(0,.8,.32,1.07) forwards;
+  }
+
+  @keyframes openspace {
+    to {
+        height: auto;
+    }
+}
+
+@keyframes restored-item-animation {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+  .gallery{
+    margin : 0 auto;
+    max-width: 1080px;
+  }
+  
+  .content {
+    position: relative;
+  }
+
+  .image{
+    width: 50%;
+  }
+
+  @media (max-width: 800px) {
+    .thumbnail-container {
+      flex-direction: column;
+      align-items: center
+    }
+
+    .image-item{
+      display: block;
+      height: auto;
+      width: 95%;
+      text-align: center;
+      margin: 10px;
+      box-shadow: 10px 10px 10px grey;
+      animation: 
+          /* openspace .3s ease forwards,  */
+          restored-item-animation .5s .5s cubic-bezier(0,.8,.32,1.07) forwards;
+    }
+  }
+
+  .removed-item {
+    animation: removed-item-animation 1s cubic-bezier(0.55, -0.04, 0.91, 0.94) forwards;
+    /*transform origin is moved to the bottom left corner*/
+    transform-origin: 0% 100%;
+}
+
+@keyframes removed-item-animation {
+    0% {
+        opacity: 1;
+        transform: rotateZ(0);
+}
+
+    100% {
+        opacity: 0;
+        transform: translateY(600px) rotateZ(90deg);
+    }
+}
+
+.title-text{
+  font-size: 20px;
+  text-align: center;
+}
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  height: 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
